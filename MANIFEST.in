@@ -1,0 +1,2 @@
+include MANIFEST.in
+recursive-include ai_tool_checker *.json *.js *.css *.html *.md *.txt *.py

@@ -1,0 +1,178 @@
+/* ai_tool_checker/public/css/ai_tool_checker.css */
+
+/* ─── Dashboard ─── */
+.ai-dashboard-wrapper {
+    padding: 20px;
+    font-family: var(--font-stack);
+}
+
+.ai-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.ai-stat-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px 24px;
+    flex: 1 1 160px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+.ai-stat-card:hover { box-shadow: var(--shadow-md); }
+
+.ai-stat-icon { font-size: 28px; margin-bottom: 6px; }
+.ai-stat-value { font-size: 2rem; font-weight: 700; color: var(--text-color); }
+.ai-stat-label { font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; }
+
+.ai-content-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.ai-panel {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+}
+.ai-panel h4 { margin-bottom: 14px; font-size: 1rem; color: var(--text-color); }
+
+@media (max-width: 768px) {
+    .ai-content-row { grid-template-columns: 1fr; }
+    .ai-stats-row { gap: 10px; }
+}
+
+/* ─── Web Portal ─── */
+.ai-portal-wrapper { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+
+.ai-portal-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.ai-portal-hero h1 { font-size: 2.5rem; font-weight: 800; color: var(--text-color); }
+.ai-portal-hero p { font-size: 1.1rem; color: var(--text-muted); margin-top: 10px; }
+
+.ai-search-bar {
+    display: flex;
+    gap: 10px;
+    max-width: 600px;
+    margin: 24px auto 0;
+}
+.ai-search-bar input {
+    flex: 1;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    font-size: 1rem;
+}
+.ai-search-bar button {
+    padding: 10px 20px;
+    background: #5e64ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.ai-search-bar button:hover { background: #4a52e0; }
+
+.ai-industry-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+.ai-industry-tab {
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    background: var(--card-bg);
+    transition: all 0.15s;
+}
+.ai-industry-tab:hover,
+.ai-industry-tab.active {
+    background: #5e64ff;
+    color: white;
+    border-color: #5e64ff;
+}
+
+.ai-tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.ai-tool-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.ai-tool-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    color: inherit;
+}
+.ai-tool-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.ai-tool-logo {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    object-fit: contain;
+    background: #f0f0f0;
+}
+.ai-tool-logo-placeholder {
+    width: 44px; height: 44px;
+    border-radius: 8px;
+    background: #5e64ff22;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+}
+.ai-tool-title { font-weight: 700; font-size: 1rem; }
+.ai-tool-pricing {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: #f0f4ff;
+    color: #5e64ff;
+    margin-left: auto;
+    white-space: nowrap;
+}
+.ai-tool-desc { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 12px; flex: 1; }
+.ai-tool-meta { display: flex; align-items: center; justify-content: space-between; }
+.ai-tool-rating { color: #f5a623; font-size: 0.9rem; }
+.ai-tool-industry {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    background: var(--bg-light-gray);
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.ai-load-more {
+    text-align: center;
+    margin-top: 28px;
+}
+.ai-load-more button {
+    padding: 10px 32px;
+    background: white;
+    border: 1px solid #5e64ff;
+    color: #5e64ff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+.ai-load-more button:hover { background: #f0f4ff; }

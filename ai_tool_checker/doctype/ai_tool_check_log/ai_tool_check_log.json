@@ -1,0 +1,73 @@
+{
+ "actions": [],
+ "autoname": "AI-CHECK-.YYYY.-.#####",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "fields": [
+  {
+   "fieldname": "ai_tool",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "AI Tool",
+   "options": "AI Tool",
+   "reqd": 1
+  },
+  {
+   "fieldname": "checked_by",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Checked By",
+   "options": "User",
+   "reqd": 1,
+   "default": "__user"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "check_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Check Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "industry_context",
+   "fieldtype": "Link",
+   "label": "Industry Context",
+   "options": "AI Tool Industry"
+  },
+  {
+   "fieldname": "section_notes",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text",
+   "label": "Notes"
+  }
+ ],
+ "module": "AI Tool Checker",
+ "name": "AI Tool Check Log",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "write": 1,
+   "role": "AI Tool Manager"
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "role": "AI Tool User"
+  }
+ ],
+ "sort_field": "check_date",
+ "sort_order": "DESC",
+ "track_changes": 0
+}

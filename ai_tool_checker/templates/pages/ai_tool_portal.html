@@ -1,0 +1,52 @@
+{% extends "templates/web.html" %}
+
+{% block title %}AI Tool Explorer — Find the Best AI Tools for Your Industry{% endblock %}
+
+{% block page_content %}
+<div id="ai-tools-portal" class="ai-portal-wrapper">
+
+    <!-- Hero -->
+    <div class="ai-portal-hero">
+        <h1>🤖 AI Tool Explorer</h1>
+        <p>Discover AI tools tailored to your industry — from Manufacturing to Healthcare, Retail to Finance.</p>
+        <div class="ai-search-bar">
+            <input
+                id="ai-search-input"
+                type="text"
+                placeholder="Search tools, categories, industries…"
+                autocomplete="off"
+            />
+            <button id="ai-search-btn">Search</button>
+        </div>
+    </div>
+
+    <!-- Industry filter tabs -->
+    <div id="ai-industry-tabs" class="ai-industry-tabs">
+        <button class="ai-industry-tab active" data-industry="All">🌐 All</button>
+    </div>
+
+    <!-- Tools grid -->
+    <div id="ai-tools-grid" class="ai-tools-grid">
+        <div style="grid-column:1/-1;text-align:center;padding:40px;">Loading tools…</div>
+    </div>
+
+    <!-- Load more -->
+    <div class="ai-load-more">
+        <button id="ai-load-more-btn" style="display:none;" onclick="AIToolChecker.Portal.loadMore()">
+            Load More
+        </button>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    // frappe.ready is available on web pages that include frappe JS
+    frappe.ready(function() {
+        if (document.getElementById("ai-tools-portal")) {
+            AIToolChecker.Portal.init();
+        }
+    });
+</script>
+{% endblock %}

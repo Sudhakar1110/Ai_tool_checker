@@ -1,0 +1,209 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:tool_name",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "tool_name", "short_description", "column_break_1",
+  "category", "industry", "section_break_details",
+  "tool_url", "logo_image", "column_break_2",
+  "pricing_model", "is_active", "availability_status",
+  "section_break_stats", "average_rating", "review_count",
+  "check_count", "column_break_3", "tags",
+  "section_break_desc", "full_description",
+  "section_break_features", "key_features",
+  "section_break_industries", "supported_industries"
+ ],
+ "fields": [
+  {
+   "fieldname": "tool_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Tool Name",
+   "reqd": 1,
+   "unique": 1,
+   "bold": 1
+  },
+  {
+   "fieldname": "short_description",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Short Description",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Category",
+   "options": "AI Tool Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Primary Industry",
+   "options": "AI Tool Industry"
+  },
+  {
+   "fieldname": "section_break_details",
+   "fieldtype": "Section Break",
+   "label": "Details"
+  },
+  {
+   "fieldname": "tool_url",
+   "fieldtype": "Data",
+   "label": "Tool URL",
+   "options": "URL"
+  },
+  {
+   "fieldname": "logo_image",
+   "fieldtype": "Attach Image",
+   "label": "Logo Image"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pricing_model",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Pricing Model",
+   "options": "\nFree\nFreemium\nPaid\nEnterprise\nOpen Source"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "availability_status",
+   "fieldtype": "Select",
+   "label": "Availability Status",
+   "options": "\nOnline\nOffline\nUnknown",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_stats",
+   "fieldtype": "Section Break",
+   "label": "Statistics"
+  },
+  {
+   "fieldname": "average_rating",
+   "fieldtype": "Float",
+   "label": "Average Rating",
+   "precision": "2",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "review_count",
+   "fieldtype": "Int",
+   "label": "Review Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "check_count",
+   "fieldtype": "Int",
+   "label": "Check Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tags",
+   "fieldtype": "Data",
+   "label": "Tags (comma separated)"
+  },
+  {
+   "fieldname": "section_break_desc",
+   "fieldtype": "Section Break",
+   "label": "Full Description"
+  },
+  {
+   "fieldname": "full_description",
+   "fieldtype": "Text Editor",
+   "label": "Full Description"
+  },
+  {
+   "fieldname": "section_break_features",
+   "fieldtype": "Section Break",
+   "label": "Key Features"
+  },
+  {
+   "fieldname": "key_features",
+   "fieldtype": "Table",
+   "label": "Key Features",
+   "options": "AI Tool Feature"
+  },
+  {
+   "fieldname": "section_break_industries",
+   "fieldtype": "Section Break",
+   "label": "Supported Industries"
+  },
+  {
+   "fieldname": "supported_industries",
+   "fieldtype": "Table MultiSelect",
+   "label": "Supported Industries",
+   "options": "AI Tool Industry Link"
+  }
+ ],
+ "links": [],
+ "modified": "2024-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AI Tool Checker",
+ "name": "AI Tool",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "AI Tool Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "AI Tool User",
+   "share": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "tool_name,category,industry,tags",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "tool_name",
+ "track_changes": 1
+}

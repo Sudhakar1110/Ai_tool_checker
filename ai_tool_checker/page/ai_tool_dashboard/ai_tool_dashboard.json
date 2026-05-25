@@ -1,0 +1,13 @@
+{
+ "doctype": "Page",
+ "module": "AI Tool Checker",
+ "name": "ai-tool-dashboard",
+ "page_name": "ai-tool-dashboard",
+ "standard": "Yes",
+ "title": "AI Tool Dashboard",
+ "roles": [
+  {"role": "AI Tool Manager"},
+  {"role": "AI Tool User"},
+  {"role": "System Manager"}
+ ]
+}

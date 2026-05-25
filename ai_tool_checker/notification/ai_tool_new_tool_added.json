@@ -1,0 +1,17 @@
+{
+ "doctype": "Notification",
+ "name": "AI Tool - New Tool Added",
+ "subject": "New AI Tool Added: {{ doc.tool_name }}",
+ "document_type": "AI Tool",
+ "event": "New",
+ "method": "",
+ "enabled": 1,
+ "send_to_all_assignees": 0,
+ "recipients": [
+  {
+   "receiver_by_role": "AI Tool Manager"
+  }
+ ],
+ "message": "<p>A new AI Tool has been added to the system:</p><ul><li><strong>Tool Name:</strong> {{ doc.tool_name }}</li><li><strong>Category:</strong> {{ doc.category }}</li><li><strong>Industry:</strong> {{ doc.industry }}</li><li><strong>Pricing:</strong> {{ doc.pricing_model }}</li><li><strong>URL:</strong> <a href=\"{{ doc.tool_url }}\">{{ doc.tool_url }}</a></li></ul><p>{{ doc.short_description }}</p><p>Added by: {{ frappe.db.get_value('User', doc.owner, 'full_name') }}</p>",
+ "attach_print": 0
+}

@@ -1,0 +1,17 @@
+{
+ "doctype": "Notification",
+ "name": "AI Tool - Review Submitted",
+ "subject": "New Review for {{ doc.ai_tool }}: {{ doc.rating }}/5 stars",
+ "document_type": "AI Tool Review",
+ "event": "New",
+ "method": "",
+ "enabled": 1,
+ "send_to_all_assignees": 0,
+ "recipients": [
+  {
+   "receiver_by_role": "AI Tool Manager"
+  }
+ ],
+ "message": "<p>A new review has been submitted:</p><ul><li><strong>Tool:</strong> {{ doc.ai_tool }}</li><li><strong>Reviewer:</strong> {{ doc.reviewer_name }}</li><li><strong>Rating:</strong> {{ doc.rating }}/5</li><li><strong>Date:</strong> {{ doc.review_date }}</li></ul><blockquote>{{ doc.review_text }}</blockquote>",
+ "attach_print": 0
+}

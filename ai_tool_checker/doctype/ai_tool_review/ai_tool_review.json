@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "autoname": "AI-REV-.YYYY.-.#####",
+ "creation": "2024-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "is_submittable": 1,
+ "fields": [
+  {
+   "fieldname": "ai_tool",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "AI Tool",
+   "options": "AI Tool",
+   "reqd": 1
+  },
+  {
+   "fieldname": "reviewer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Reviewer (User)",
+   "options": "User",
+   "reqd": 1,
+   "default": "__user"
+  },
+  {
+   "fieldname": "reviewer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Reviewer Name",
+   "fetch_from": "reviewer.full_name",
+   "fetch_if_empty": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Rating",
+   "reqd": 1
+  },
+  {
+   "fieldname": "review_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Review Date",
+   "reqd": 1,
+   "default": "Today"
+  },
+  {
+   "fieldname": "section_review",
+   "fieldtype": "Section Break",
+   "label": "Review"
+  },
+  {
+   "fieldname": "review_text",
+   "fieldtype": "Text",
+   "label": "Review Text",
+   "reqd": 1
+  }
+ ],
+ "module": "AI Tool Checker",
+ "name": "AI Tool Review",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "submit": 1,
+   "write": 1,
+   "role": "AI Tool Manager"
+  },
+  {
+   "create": 1,
+   "read": 1,
+   "submit": 1,
+   "role": "AI Tool User"
+  }
+ ],
+ "sort_field": "review_date",
+ "sort_order": "DESC",
+ "title_field": "ai_tool",
+ "track_changes": 1
+}

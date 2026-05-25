@@ -1,0 +1,70 @@
+{
+ "doctype": "Workspace",
+ "name": "AI Tool Checker",
+ "label": "AI Tool Checker",
+ "module": "AI Tool Checker",
+ "category": "Modules",
+ "icon": "robot",
+ "color": "#5e64ff",
+ "is_standard": 1,
+ "public": 1,
+ "shortcuts": [
+  {
+   "label": "AI Tool",
+   "type": "DocType",
+   "link_to": "AI Tool",
+   "icon": "tool",
+   "color": "#5e64ff"
+  },
+  {
+   "label": "AI Tool Industry",
+   "type": "DocType",
+   "link_to": "AI Tool Industry",
+   "icon": "industry",
+   "color": "#00BCD4"
+  },
+  {
+   "label": "AI Tool Category",
+   "type": "DocType",
+   "link_to": "AI Tool Category",
+   "icon": "tag",
+   "color": "#4CAF50"
+  },
+  {
+   "label": "AI Tool Review",
+   "type": "DocType",
+   "link_to": "AI Tool Review",
+   "icon": "star",
+   "color": "#FF9800"
+  },
+  {
+   "label": "AI Tool Check Log",
+   "type": "DocType",
+   "link_to": "AI Tool Check Log",
+   "icon": "list",
+   "color": "#9C27B0"
+  },
+  {
+   "label": "Industry Summary",
+   "type": "Report",
+   "link_to": "AI Tool Industry Summary",
+   "icon": "bar-chart",
+   "color": "#F44336"
+  },
+  {
+   "label": "Usage Report",
+   "type": "Report",
+   "link_to": "AI Tool Usage Report",
+   "icon": "line-chart",
+   "color": "#607D8B"
+  },
+  {
+   "label": "AI Tool Dashboard",
+   "type": "Page",
+   "link_to": "ai-tool-dashboard",
+   "icon": "dashboard",
+   "color": "#E91E63"
+  }
+ ],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"AI Tool Checker\",\"level\":4,\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AI Tool\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AI Tool Industry\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AI Tool Category\",\"col\":3}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AI Tool Review\",\"col\":3}},{\"type\":\"divider\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Reports & Analytics\",\"level\":5,\"col\":12}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Industry Summary\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Usage Report\",\"col\":4}},{\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"AI Tool Dashboard\",\"col\":4}}]"
+}
