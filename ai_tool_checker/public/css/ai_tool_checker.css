@@ -176,3 +176,28 @@
     font-size: 1rem;
 }
 .ai-load-more button:hover { background: #f0f4ff; }
+
+.ai-tool-detail-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 16px 0 20px;
+}
+.ai-tool-detail-header h1 { margin: 0 0 8px; font-size: 2rem; }
+.ai-tool-full-desc { margin: 16px 0; }
+.ai-review-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 12px;
+}
+.ai-detail-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #5e64ff;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.ai-detail-link:hover { background: #4a52e0; color: white; }

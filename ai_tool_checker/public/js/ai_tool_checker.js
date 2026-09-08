@@ -140,11 +140,89 @@ AIToolChecker.Portal = {
     },
 };
 
+AIToolChecker.Detail = {
+    init() {
+        const root = document.getElementById("ai-tool-detail");
+        const body = document.getElementById("ai-tool-detail-body");
+        if (!root || !body) return;
+
+        const toolName = root.dataset.tool;
+        if (!toolName) {
+            body.innerHTML = `<p>Tool not found.</p>`;
+            return;
+        }
+
+        frappe.call({
+            method: "ai_tool_checker.utils.get_tool_detail",
+            args: { tool_name: toolName },
+            callback: (r) => {
+                if (!r.message || !r.message.tool) {
+                    body.innerHTML = `<p>Tool not found.</p>`;
+                    return;
+                }
+                this.render(body, r.message.tool, r.message.reviews || []);
+            },
+            error: () => {
+                body.innerHTML = `<p>Unable to load this tool.</p>`;
+            },
+        });
+    },
+
+    render(body, tool, reviews) {
+        const stars = tool.average_rating
+            ? "★".repeat(Math.round(tool.average_rating)) + "☆".repeat(5 - Math.round(tool.average_rating))
+            : "☆☆☆☆☆";
+        const logo = tool.logo_image
+            ? `<img class="ai-tool-logo" src="${tool.logo_image}" alt="${tool.tool_name || ""}" />`
+            : `<div class="ai-tool-logo-placeholder">🤖</div>`;
+        const features = (tool.key_features || [])
+            .map((f) => `<li><strong>${f.feature || ""}</strong>${f.description ? ` — ${f.description}` : ""}</li>`)
+            .join("");
+        const reviewHtml = reviews.length
+            ? reviews
+                  .map(
+                      (rev) => `<div class="ai-review-card">
+                    <div class="ai-tool-rating">${"★".repeat(Math.round(rev.rating || 0))}${"☆".repeat(5 - Math.round(rev.rating || 0))}</div>
+                    <p>${rev.review_text || ""}</p>
+                    <small>${rev.reviewer_name || "Anonymous"} · ${rev.creation || ""}</small>
+                </div>`
+                  )
+                  .join("")
+            : `<p>No reviews yet.</p>`;
+
+        body.innerHTML = `
+            <div class="ai-tool-detail-header">
+                ${logo}
+                <div>
+                    <h1>${tool.tool_name || toolNameFallback(tool)}</h1>
+                    <div class="ai-tool-meta">
+                        <span class="ai-tool-rating">${stars} ${tool.average_rating ? Number(tool.average_rating).toFixed(1) : "0.0"}</span>
+                        <span class="ai-tool-industry">${tool.industry || tool.category || ""}</span>
+                        <span class="ai-tool-pricing">${tool.pricing_model || "N/A"}</span>
+                    </div>
+                </div>
+            </div>
+            <p class="ai-tool-desc">${tool.short_description || ""}</p>
+            ${tool.full_description ? `<div class="ai-tool-full-desc">${tool.full_description}</div>` : ""}
+            ${features ? `<h3>Key Features</h3><ul>${features}</ul>` : ""}
+            ${tool.tool_url ? `<p><a class="ai-detail-link" href="${tool.tool_url}" target="_blank" rel="noopener">Visit tool</a></p>` : ""}
+            <h3>Reviews</h3>
+            ${reviewHtml}
+        `;
+    },
+};
+
+function toolNameFallback(tool) {
+    return tool.name || "AI Tool";
+}
+
 // Auto-init on portal page
 if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", () => {
         if (document.getElementById("ai-tools-portal")) AIToolChecker.Portal.init();
+        if (document.getElementById("ai-tool-detail")) AIToolChecker.Detail.init();
     });
 } else {
     if (document.getElementById("ai-tools-portal")) AIToolChecker.Portal.init();
+    if (document.getElementById("ai-tool-detail")) AIToolChecker.Detail.init();
 }

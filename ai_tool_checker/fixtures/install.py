@@ -89,6 +89,11 @@ DEMO_TOOLS = [
 ]
 
 
+def before_migrate():
+    """Hook required by hooks.py. Keep migrate from failing on a missing symbol."""
+    pass
+
+
 def after_install():
     """Seed roles, categories, industries, and demo tools."""
     _create_roles()

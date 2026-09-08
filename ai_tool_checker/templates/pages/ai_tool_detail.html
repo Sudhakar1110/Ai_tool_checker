@@ -1,0 +1,22 @@
+{% extends "templates/web.html" %}
+
+{% block title %}AI Tool Details{% endblock %}
+
+{% block page_content %}
+<div id="ai-tool-detail" class="ai-portal-wrapper" data-tool="{{ tool_name }}">
+    <p><a href="/ai-tools">&larr; Back to explorer</a></p>
+    <div id="ai-tool-detail-body">
+        <div style="text-align:center;padding:40px;">Loading tool…</div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+    frappe.ready(function() {
+        if (document.getElementById("ai-tool-detail")) {
+            AIToolChecker.Detail.init();
+        }
+    });
+</script>
+{% endblock %}

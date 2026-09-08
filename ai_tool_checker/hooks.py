@@ -14,6 +14,8 @@ required_apps = ["frappe", "erpnext"]
 # ─────────────────────────────────────────────
 app_include_css = "/assets/ai_tool_checker/css/ai_tool_checker.css"
 app_include_js = "/assets/ai_tool_checker/js/ai_tool_checker.js"
+web_include_css = "/assets/ai_tool_checker/css/ai_tool_checker.css"
+web_include_js = "/assets/ai_tool_checker/js/ai_tool_checker.js"
 
 # ─────────────────────────────────────────────
 # Website route rules
